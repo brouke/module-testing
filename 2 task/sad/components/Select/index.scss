@@ -1,0 +1,41 @@
+.name{
+    width: 502px;
+    height: 52px;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.161);
+    display: grid;
+    grid-template-columns: 1fr 0.1fr;
+    justify-items: center;
+    align-items: center;
+    @media screen and (width < 1340px){
+        width: 420px;
+    }
+    @media screen and (width < 940px){
+        width: 320px;
+      }
+}
+.options{
+    display: grid;
+    width: 502px;
+    height: 20%;
+    box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.161);
+    position: absolute;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    gap: 10px;
+    font-family: Roboto;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 28.13px;
+    text-align: left;
+    align-items: center;
+    @media screen and (width < 1340px){
+        width: 420px;
+    }
+    :hover{
+        background-color: rgba(108, 110, 110, 0.302);
+        cursor: pointer;
+    }
+    &__label{
+        padding-left: 20px;
+    }
+}

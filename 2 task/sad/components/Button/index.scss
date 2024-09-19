@@ -1,0 +1,75 @@
+.btn{
+    &__add{
+        &-button{
+        width: 273px !important;
+        height: 52px !important;
+        top: 59px !important;
+        left: 704px !important;
+        background: rgba(76, 175, 80, 1) !important;
+        box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.161) !important;
+        border-radius: 10px !important;
+        border: none  !important;
+        outline: none !important;
+        font-family: Roboto !important;
+        font-size: 24px !important;
+        font-weight: 400 !important;
+        line-height: 28.13px !important;
+        text-align: left !important;
+        color: #ffffff !important;
+        text-align: center !important;
+        cursor: pointer !important;
+        padding: 0px !important;
+
+    }
+    }
+    &__close{
+        &-button{
+            width: 273px !important;
+            height: 52px !important;
+            top: 59px !important;
+            left: 704px !important;
+            background: rgba(115, 115, 115, 1) !important;
+            box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.161) !important;
+            border-radius: 10px !important;
+            border: none !important;
+            outline: none !important;
+            font-family: Roboto !important;
+            font-size: 24px !important;
+            font-weight: 400 !important;
+            line-height: 28.13px !important;
+            text-align: left !important;
+            color: #ffffff !important;
+            text-align: center !important;
+            cursor: pointer !important;
+            padding: 0px !important;
+            
+        }
+    }
+    &__default{
+        font-family: OpenSans;
+            font-size: 25px;
+            font-weight: 400;
+            line-height: 34.05px;
+            text-align: left;
+            color: #4E3000;
+            background-color: #ffffff;
+            border: none;
+            cursor: pointer;
+            padding: 15px;
+    }
+    }
+    .active{
+        background: #C4C4C4;
+        border-radius: 20px;
+    } 
+.circle{
+    padding: 20px;
+}
+@font-face {
+	font-family: 'Roboto'; 
+	src: url(/assets/Font/Roboto.ttf); 
+}
+@font-face {
+	font-family: 'OpenSans'; 
+	src: url(/assets/Font/OpenSans.ttf); 
+}
