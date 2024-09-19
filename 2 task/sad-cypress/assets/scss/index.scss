@@ -1,0 +1,185 @@
+@import './components/Button/index.scss';
+@import './components/Input/index.scss';
+@import './components/Modals/index.scss';
+@import './components/Select/index.scss';
+
+html,
+body {
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+}
+#__nuxt {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.app{
+  display: grid;
+  padding: 24px 50px 10px 50px;
+  grid-template-rows: 0.1fr 10fr 0.1fr;
+  @media screen and (width < 1820px){
+    grid-template-rows: 0.1fr 8fr 0.1fr;
+  }
+  @media screen and (width < 1620px){
+    grid-template-rows: 0.1fr 4.5fr 0.1fr;
+  }
+  @media screen and (width < 1340px){
+    grid-template-rows: 0.1fr 2.3fr 0.1fr;
+  }
+  @media screen and (width < 750px){
+    padding: 0px 10px;
+  }
+&__head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+  @media screen and (width < 1620px){
+    height: 150px;
+  }
+  @media screen and (width < 1340px){
+    height: 250px;
+  }
+  @media screen and (width < 940px){
+    height: 400px;
+    justify-content: space-evenly;
+  }
+  @media screen and (width < 750px){
+    justify-content: center;
+      gap: 40px;
+      align-items: center;
+  }
+  &__info{
+    display: flex;
+    gap: 40px;
+    @media screen and (width < 940px){
+    display: grid;
+    justify-items: center;
+  }
+  }
+  
+  &__quantity{
+    display: grid;
+    justify-items: end;
+  }
+  &__counter{
+    display: flex;
+    font-family: OpenSans;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40.85px;
+    color: #4E3000;
+  }
+  &-select{
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    @media screen and (width < 1620px){
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (width < 1340px){
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  }
+  &__present{
+    font-family: OpenSans;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40.85px;
+    margin: 0px;
+    padding: 0px 12px;
+    color: #80BB00;
+  }
+  &__absent{
+    font-family: OpenSans;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40.85px;
+    margin: 0px;
+    padding: 0px 12px;
+    color: #EC5937;
+  }
+  &__staff{
+    font-family: OpenSans;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40.85px;
+    margin: 0px;
+    color: #4E3000;
+  }
+}
+&__body{
+  height: 100%;
+  overflow-y: auto;
+}
+&__filter{
+  display: flex;
+  align-items: center;
+  height: 53px;
+  p{
+    font-family: Open Sans;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40.85px;
+    text-align: left;
+    color: #4E3000;
+  }
+}
+}
+table{
+width: 100%;
+text-align: center;
+border-collapse: separate;
+  border-spacing: 0 1em;
+}
+tbody{
+tr:hover{
+background-color: rgba(108, 110, 110, 0.302);
+cursor: pointer;
+}
+}
+th{
+border-bottom: 4px solid #E9E9E9;
+padding: 0px;
+font-family: OpenSans;
+font-size: 20px;
+font-weight: 600;
+line-height: 27.24px;
+text-align: left;
+color: #4E3000;
+}
+td{
+font-family: OpenSans;
+font-size: 30px;
+font-weight: 400;
+line-height: 40.85px;
+text-align: left;
+}
+.table__th{
+text-align: end;
+}
+.table__td{
+display: flex;
+justify-content: flex-end;
+}
+.absent{
+width: 59px;
+height: 59px;
+border-radius: 30px;
+background: #80BB00;
+}
+.present{
+width: 59px;
+height: 59px;
+border-radius: 30px;
+background: #EC5937;
+}
+@font-face {
+font-family: 'OpenSans'; 
+src: url(/assets/Font/OpenSans.ttf); 
+}
