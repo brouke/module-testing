@@ -1,6 +1,6 @@
 describe("example to-do app", () => {
   beforeEach(() => {
-    cy.visit("https://www.saucedemo.com");
+    cy.visit("https://www.saucedemo.com/");
   });
 
   it("error auth", () => {
