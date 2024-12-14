@@ -98,5 +98,17 @@ describe("example to-do app", () => {
               });
           });
       });
+  it("buy"), () => {
+    cy.contains('a', 'Личный кабинет')
+    .click(); 
+    cy.contains('a', 'Войти с помощью e-mail')
+    .click();
+    cy.contains('div', 'E-mail').type('123@mail.ru');
+    cy.contains('div', 'Пароль').type('A1234567_8');
+    cy.contains('div', 'Войти')
+    .click();
+    cy.visit("https://poizon.ru/");
+    cy.get('.app-product-list__item').contains('New Balance NB 530 White Silver Navy D').parents('a').click(); 
+  }
     });
     
