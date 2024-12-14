@@ -109,6 +109,10 @@ describe("example to-do app", () => {
     .click();
     cy.visit("https://poizon.ru/");
     cy.get('.app-product-list__item').contains('New Balance NB 530 White Silver Navy D').parents('a').click(); 
+    cy.contains('span', 'EU 36').parents('.app-product-sizes-list__item').click();
+    cy.contains('button', 'В корзину').click();
+    cy.get('a[href="/checkout/cart"]').click();
+    cy.contains('button', 'Перейти к оформлению').click();
   }
     });
     
