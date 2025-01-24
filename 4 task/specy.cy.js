@@ -18,6 +18,8 @@ describe("example to-do app", () => {
     cy.contains('div', 'Подтвердите пароль').type('A12345678');
     cy.contains('div', 'Зарегистрироваться')
     .click();
+    cy.get(".v-alert_wrapper").should("be.visible")
+    .and('contain.text', 'Введите правильный адрес электронной почты');
  
   });
   it("-registration", () => {
@@ -33,8 +35,18 @@ describe("example to-do app", () => {
     cy.contains('div', 'E-mail').type('123@mail.ru');
     cy.contains('div', 'Пароль').type('A1234567_8');
     cy.contains('div', 'Подтвердите пароль').type('A1234567_8');
-    cy.contains('div', 'Зарегистрироваться')
-    .click();
+    cy.contains('div', 'Зарегистрироваться').click();
+        cy.intercept({
+            method: 'GET',
+            url: 'https://poizon.ru/graphql'
+          }).as('getUserData');
+         cy.visit('https://poizon.ru/customer/login/email?registration=');
+        cy.wait('@getUserData').then((interception) => {
+          expect(interception.request.method).to.eq('GET');
+          expect(interception.response.statusCode).to.eq(200);
+        });
+
+  
  
   });
   it("Auth", () => {
@@ -46,6 +58,15 @@ describe("example to-do app", () => {
     cy.contains('div', 'Пароль').type('A1234567_8');
     cy.contains('div', 'Войти')
     .click();
+        cy.intercept({
+            method: 'GET',
+            url: 'https://poizon.ru/graphql?query=fragment+UserDataFragment+on+User%7Bid+givenName%3Agiven_name+familyName%3Afamily_name+middleName%3Amiddle_name+phone+birthday+email+city+street+building+apartment+deposit+cart%7Bid+__typename%7DhasDocs+emailVerifyAt%3Aemail_verified_at+phoneVerifyAt%3Aphone_verified_at+__typename%7Dquery+getCustomer%7Bprofile%7B...UserDataFragment+__typename%7D%7D&operationName=getCustomer&variables=%7B%7D'
+          }).as('getUserData');
+         cy.visit('https://poizon.ru/customer/login/email');
+        cy.wait('@getUserData').then((interception) => {
+          expect(interception.request.method).to.eq('GET');
+          expect(interception.response.statusCode).to.eq(200);
+        });
  
   });
   it("Err-Auth", () => {
@@ -60,8 +81,18 @@ describe("example to-do app", () => {
     cy.get('.v-alert__content')
       .should('be.visible')
       .and('contain.text', 'Неверные данные для входа. Пожалуйста, попробуйте ещё раз');
- 
-  });
+          cy.intercept({
+              method: 'GET',
+              url: 'https://poizon.ru/graphql'
+            }).as('getUserData');
+           cy.visit('https://poizon.ru/customer/login/email');
+           y.wait('@apiResponse').then((interception) => {
+            expect(interception.response).to.have.property('body').and.to.be.an('object');
+            const accessToken = responseBody.accessToken;
+            const refreshToken = responseBody.refreshToken;
+            cy.log(`accessToken: ${accessToken}`);
+            cy.log(`refreshToken: ${refreshToken}`);
+
   it("sortyng", () => {
     cy.contains('a', 'Личный кабинет')
     .click(); 
@@ -115,4 +146,5 @@ describe("example to-do app", () => {
     cy.contains('button', 'Перейти к оформлению').click();
   }
     });
-    
+});
+});
