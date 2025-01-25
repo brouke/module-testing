@@ -59,7 +59,7 @@ describe("example to-do app", () => {
         });
  
   });
-  it("Err-Auth", () => {
+  it("Err-login", () => {
     login('1234@mail.ru','A1234567_89');
     cy.get('.v-alert__content')
       .should('be.visible')
